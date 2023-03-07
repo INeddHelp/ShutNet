@@ -14,3 +14,6 @@ However, to run the script you must need the administrative privileges.
 # Will it cause any harm to any device?
 
 No, it will not, however, it will delete the system log, which can be useful, but no essential.
+
+
+If you have any issue please create an issue in the 'Issues' section.
