@@ -17,7 +17,7 @@ No, it will not, however, it will delete the system log, which can be useful, bu
 
 ---
 
-#Instructions
+# Instructions
 
 - Download and extract the zip / tar.gz file
 - Make sure you are connected to a wifi connection
