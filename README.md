@@ -15,6 +15,8 @@ However, to run the script you must need the administrative privileges.
 
 No, it will not, however, it will delete the system log, which can be useful, but not essential.
 
+P.S. I suggest you to not try the exe file its a WIP 
+
 ---
 
 # Instructions
