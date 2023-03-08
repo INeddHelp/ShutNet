@@ -4,7 +4,7 @@
 
 # What's this?
 
-ShutNet, is a virus that will automaticly delete every system event log and network log from every ip connected to your wifi.
+ShutNet, is a virus that will automaticly delete every system event log and network log from every ip connected to your wifi and shut down every device connected. 
 
 # How does it work? 
 
