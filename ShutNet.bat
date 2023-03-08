@@ -12,6 +12,5 @@ for %%i in (%IPs%) do (
   REM wevtutil cl "Microsoft-Windows-NetworkProfile/Operational" /r /u %%i\%USERNAME% /p %PASSWORD:*%=%% /s %%i
   REM wevtutil cl "System" /r /u %%i\%USERNAME% /p %PASSWORD:*%=%% /s %%i
  shutdown -i -s -m \\%%i -t 0 -c "Shutting down %%i"
-
 )
 
