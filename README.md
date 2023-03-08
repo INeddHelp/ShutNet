@@ -15,5 +15,16 @@ However, to run the script you must need the administrative privileges.
 
 No, it will not, however, it will delete the system log, which can be useful, but not essential.
 
+---
+
+#Instructions
+
+- Download and extract the zip / tar.gz file
+- Make sure you are connected to a wifi connection
+- Right click on the ShutNet.bat file
+- - Click on "Open as administator"
+- Enjoy!
+
+
 
 If you have any issue please create an issue in the 'Issues' section.
