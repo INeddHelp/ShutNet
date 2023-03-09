@@ -11,7 +11,7 @@ ShutNet, is a 'virus'(it is not) that shuts down every device connected to your 
 You just need to download the .zip file and follow the instructions.
 However, to run the script you must need the administrative privileges.
 
-<p>https://github.com/INeddHelp/ShutNet#Instructions</p>
+<a>[https://github.com/INeddHelp/ShutNet#Instructions](https://github.com/INeddHelp/ShutNet#instructions)</a>
 
 # Will it cause any harm to any device?
 
