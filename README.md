@@ -8,7 +8,7 @@ ShutNet, is a 'virus'(it is not) that shuts down every device connected to your 
 
 # How does it work? 
 
-You just need to download the file ShutNet.bat and run it ON WINDOWS, after that the code will run.
+You just need to download the .zip file and follow the instructions.
 However, to run the script you must need the administrative privileges.
 
 # Will it cause any harm to any device?
@@ -21,11 +21,13 @@ P.S. I suggest you to not try the exe file its a WIP
 
 # Instructions
 
-- Download and extract the zip / tar.gz file
-- Make sure you are connected to a wifi connection
-- Right click on the ShutNet.bat file
-- - Click on "Open as administator"
-- Enjoy!
+-  Download and extract the zip / tar.gz file
+-  Make sure you are connected to a wifi connection
+-  Open 'powershell' with the administator privileges
+-  -  Paste this line into the terminal 'Set-ExecutionPolicy RemoteSigned'
+-  -  Now you can safely close the terminal
+-  Open the ShutNet.ps1 with the administator privileges
+-  Enjoy!
 
 
 
