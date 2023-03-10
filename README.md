@@ -26,7 +26,7 @@ P.S. I suggest you to not try the exe file its a WIP
 -  Download and extract the zip / tar.gz file
 -  Make sure you are connected to a wifi connection
 -  Right click on ShutNet.exe
--  -  Click on 'Open as administrator'
+-  -  Click on 'Run as administrator'
 
 Enjoy!
 
