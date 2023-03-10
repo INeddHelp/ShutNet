@@ -24,10 +24,11 @@ P.S. I suggest you to not try the exe file its a WIP
 -  Download and extract the zip / tar.gz file
 -  Make sure you are connected to a wifi connection
 -  Open 'powershell' with the administator privileges
--  -  Paste this line into the terminal 'Set-ExecutionPolicy RemoteSigned'
--  -  Now you can safely close the terminal
--  Open the ShutNet.ps1 with the administator privileges
--  Enjoy!
+-  -  Paste this line into the terminal: 'ExecutionPolicy Bypass (On Windows: 'powershell.exe -ExecutionPolicy Bypass')'
+-  -  Now navigate with the 'cd' command to the directory of the extracted Content
+-  -  Now run the command .\ShutNet.ps1
+-  -  Press enter and after the command executed you can safely close the terminal
+Enjoy!
 
 
 
