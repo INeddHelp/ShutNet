@@ -22,3 +22,5 @@ foreach ($ip in $ipAddresses) {
         Write-Warning "Could not connect to IP address $ip"
     }
 }
+
+Clear-Content "Ips.txt"
