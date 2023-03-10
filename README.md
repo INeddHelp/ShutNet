@@ -21,6 +21,19 @@ P.S. I suggest you to not try the exe file its a WIP
 
 # Instructions
 
+## .exe file
+
+-  Download and extract the zip / tar.gz file
+-  Make sure you are connected to a wifi connection
+-  Right click on ShutNet.exe
+-  -  Click on 'Open as administrator'
+
+Enjoy!
+
+---
+
+## .ps1 file
+
 -  Download and extract the zip / tar.gz file
 -  Make sure you are connected to a wifi connection
 -  Open 'powershell' with the administator privileges
@@ -28,6 +41,7 @@ P.S. I suggest you to not try the exe file its a WIP
 -  -  Now navigate with the 'cd' command to the directory of the extracted Content
 -  -  Now run the command .\ShutNet.ps1
 -  -  Press enter and after the command executed you can safely close the terminal
+
 Enjoy!
 
 
