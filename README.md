@@ -1,5 +1,8 @@
 # ShutNet
 
+[Discord Server](https://discord.gg/xbCqXzc6)
+[Youtube Channel](https://www.youtube.com/channel/UCADzCQHiPs0nBP8WTuFnIPA)
+
 ---
 
 # What's this?
@@ -14,8 +17,6 @@ However, to run the script you must need the administrative privileges.
 # Will it cause any harm to any device?
 
 No, it will not.
-
-P.S. I suggest you to not try the exe file its a WIP 
 
 ---
 
