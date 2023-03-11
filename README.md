@@ -1,8 +1,8 @@
 # ShutNet
 
-[Discord Server](https://discord.gg/xbCqXzc6)
+[Discord Server ☕](https://discord.gg/xbCqXzc6)
 
-[Youtube Channel](https://www.youtube.com/channel/UCADzCQHiPs0nBP8WTuFnIPA)
+[Youtube Channel 📹](https://www.youtube.com/channel/UCADzCQHiPs0nBP8WTuFnIPA)
 
 ---
 
