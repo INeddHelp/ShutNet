@@ -47,7 +47,7 @@ foreach ($ip in $ipAddresses) {
     if ($pingResult -match "1 received") {
         $computerName = $(nslookup $ip | Select-String "name =" | Out-String).Trim() -replace ".*name = ([^\.]*)\..*", '$1'
         if ($computerName) {
-            $(shutdown -s -f -t 0 -m \\$computerName)
+            Invoke-Command -ComputerName $computerName -ScriptBlock {shutdown.exe /s /t 0}
         } else {
             Write-Warning "Could not resolve computer name for IP address $ip"
         }
