@@ -38,13 +38,9 @@ Enjoy!
 -  Make sure you are connected to a wifi connection
 -  Open 'powershell' with the administator privileges
 -  -  Paste this line into the terminal: 
--  -  ```
--  -  Set-ExecutionPolicy Bypass
--  -  ```
+-  -  ```Set-ExecutionPolicy Bypass```
 -  -  On Windows: 
--  -  ```
--  -  powershell.exe -ExecutionPolicy Bypass
--  -  ```
+-  -  ```powershell.exe -ExecutionPolicy Bypass```
 -  -  Now navigate with the 'cd' command to the directory of the extracted Content
 -  -  Now run the command .\ShutNet.ps1
 -  -  Press enter and after the command executed you can safely close the terminal
