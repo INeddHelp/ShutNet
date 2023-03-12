@@ -36,7 +36,7 @@ cd Download
 ```
 -  -  Then type in:
 ```
-git-install-2.31.1.exe /SILENT
+name-of-the-file-downloaded.exe /SILENT
 ```
 Then follow the instructions underneath 
 
