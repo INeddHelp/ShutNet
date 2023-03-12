@@ -23,7 +23,7 @@ No, it will not.
 
 # Instructions
 
-## How to install the package
+## How to install the package on windows
 
 ### If git is not installed 
 
@@ -54,6 +54,55 @@ git clone https://github.com/INeddHelp/ShutNet
 
 After you installed the package, read how to start the .exe or .ps1 file correctly
 
+## How to install the package on Linux
+
+### If git is not installed
+
+#### Ubuntu or Derbian
+- Open the terminal
+
+Type in:
+```
+sudo apt-get update
+sudo apt-get install git
+git --version
+```
+
+#### Fedora or CentOS
+- Open the terminal
+
+Type in:
+```
+sudo dnf install git
+```
+
+#### Arch Linux
+- Open the terminal
+
+Type in:
+```
+sudo pacman -S git
+```
+#### OpenSUSE
+- Open the terminal
+
+Type in:
+```
+sudo zypper install git
+```
+Now follow the instructions underneath
+
+### If you have git installed
+
+- Open the terminal
+
+Type in:
+```
+cd Desktop/
+git clone https://github.com/INeddHelp/ShutNet
+```
+
+# How to open ShutNet on windows
 ## .exe file
 
 -  Download and extract the zip / tar.gz file
@@ -67,14 +116,9 @@ Enjoy!
 
 ## .ps1 file
 
--  Download and extract the zip / tar.gz file
 -  Make sure you are connected to a wifi connection
 -  Open 'powershell' with the administator privileges
 -  -  Paste this line into the terminal: 
-```
-Set-ExecutionPolicy Bypass
-```
--  -  On Windows: 
 ```
 powershell.exe -ExecutionPolicy Bypass
 ```
@@ -84,6 +128,12 @@ powershell.exe -ExecutionPolicy Bypass
 
 Enjoy!
 
+# How to open ShutNet on Linux
 
+- Open the ShutNet folder
+- Open the linux folder
+- Run the ShutNet.sh file
+
+Enjoy!
 
 If you have any issue please create an issue in the 'Issues' section.
