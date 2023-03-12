@@ -130,9 +130,16 @@ Enjoy!
 
 # How to open ShutNet on Linux
 
-- Open the ShutNet folder
-- Open the linux folder
-- Run the ShutNet.sh file
+- Open the terminal
+
+Type in:
+```
+cd path/to/linux-folder
+```
+```
+chmod +x ShutNet.sh
+./ShutNet.sh
+```
 
 Enjoy!
 
