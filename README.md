@@ -42,7 +42,7 @@ Then follow the instructions underneath
 
 ### If you have git installed
 
-- Open the terminal
+- Open the cmd
 -  -  Navigate to your desktop typing:
 ```
 cd Desktop
