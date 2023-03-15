@@ -52,7 +52,7 @@ cd Desktop
 git clone https://github.com/INeddHelp/ShutNet
 ```
 
-After you installed the package, read how to start the .exe or .ps1 file correctly
+After you installed the package, read [How to start the .exe or .ps1 file correctly](https://github.com/INeddHelp/ShutNet#how-to-open-shutnet-on-windows)
 
 ## How to install the package on Linux
 
