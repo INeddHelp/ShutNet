@@ -102,6 +102,8 @@ cd Desktop/
 git clone https://github.com/INeddHelp/ShutNet
 ```
 
+Now read on [How to open ShutNet on Linux]
+
 # How to open ShutNet on windows
 ## .exe file
 
