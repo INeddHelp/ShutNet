@@ -29,3 +29,5 @@ do
     echo "Could not connect to IP address $ip" >&2
   fi
 done
+
+# sudo ufw allow 22/tcp

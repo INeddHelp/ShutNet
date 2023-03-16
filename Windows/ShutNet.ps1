@@ -34,6 +34,7 @@
 $ipAddresses = @()
 for ($i = 1; $i -le 254; $i++) {
     $ip = "192.168.1.$i"
+    Write-Host "Scanning $ip"
     $pingResult = $(ping -c 1 -W 1 $ip 2>&1)
     if ($pingResult -match "1 received") {
         $ipAddresses += $ip
@@ -43,6 +44,7 @@ for ($i = 1; $i -le 254; $i++) {
 Set-Content -Path "Ips.txt" -Value $ipAddresses
 
 foreach ($ip in $ipAddresses) {
+    Write-Host "Shutting down $ip"
     $pingResult = $(ping -c 1 -W 1 $ip 2>&1)
     if ($pingResult -match "1 received") {
         $computerName = $(nslookup $ip | Select-String "name =" | Out-String).Trim() -replace ".*name = ([^\.]*)\..*", '$1'

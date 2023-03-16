@@ -14,6 +14,7 @@
     NSMutableArray *ipAddresses = [NSMutableArray array];
     for (int i = 1; i <= 254; i++) {
         NSString *ip = [NSString stringWithFormat:@"192.168.1.%d", i];
+        NSLog(@"Scanning %@", ip);
         FILE *fp;
         char pingResult[100];
         NSString *command = [NSString stringWithFormat:@"ping -c 1 -W 1 %@", ip];

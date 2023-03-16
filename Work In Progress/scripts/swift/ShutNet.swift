@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         for i in 1...254 {
             let ip = "192.168.1.\(i)"
+            print("Scanning \(ip)...")
             let task = Process()
             task.launchPath = "/usr/bin/env"
             task.arguments = ["ping", "-c", "1", "-W", "1", ip]
