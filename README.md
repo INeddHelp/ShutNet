@@ -36,7 +36,7 @@ cd Download
 ```
 -  -  Then type in:
 ```
-git-install-2.31.1.exe /SILENT
+name-of-the-file-downloaded.exe /SILENT
 ```
 Then follow the instructions underneath 
 
@@ -52,7 +52,7 @@ cd Desktop
 git clone https://github.com/INeddHelp/ShutNet
 ```
 
-After you installed the package, read how to start the .exe or .ps1 file correctly
+After you installed the package, read [How to start the .exe or .ps1 file correctly](https://github.com/INeddHelp/ShutNet#how-to-open-shutnet-on-windows)
 
 ## How to install the package on Linux
 
@@ -101,6 +101,8 @@ Type in:
 cd Desktop/
 git clone https://github.com/INeddHelp/ShutNet
 ```
+
+Now read on [How to open ShutNet on Linux](https://github.com/INeddHelp/ShutNet/blob/master/README.md#how-to-open-shutnet-on-linux)
 
 # How to open ShutNet on windows
 ## .exe file
