@@ -19,7 +19,7 @@ pingResult=$(ping -c 1 -W 1 "$ip" 2>&1)
 if [[ $pingResult =~ "1 received" ]]; then
 computerName=$(nslookup "$ip" | grep -oP 'name = \K([^.])..' | awk '{print $1}')
 if [[ -n $computerName ]]; then
-ssh "$computerName" shutdown -h now
+ssh "$computerName" sudo shutdown -h now
 else
 echo "Could not resolve computer name for IP address $ip" >&2
 fi
