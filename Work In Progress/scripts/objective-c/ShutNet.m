@@ -1,80 +1,61 @@
-#import "AppDelegate.h"
+#import <Foundation/Foundation.h>
+#import <NMSSH/NMSSH.h>
 
-@implementation AppDelegate
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        NSMutableArray *ipAddresses = [[NSMutableArray alloc] init];
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [self shutdownMachines];
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    
-}
-
-- (void)shutdownMachines {
-    NSMutableArray *ipAddresses = [NSMutableArray array];
-    for (int i = 1; i <= 254; i++) {
-        NSString *ip = [NSString stringWithFormat:@"192.168.1.%d", i];
-        NSLog(@"Scanning %@", ip);
-        FILE *fp;
-        char pingResult[100];
-        NSString *command = [NSString stringWithFormat:@"ping -c 1 -W 1 %@", ip];
-        fp = popen([command UTF8String], "r");
-        if (fp == NULL) {
-            printf("Failed to run command\n");
-            exit(1);
-        }
-        while (fgets(pingResult, sizeof(pingResult)-1, fp) != NULL) {
-            if (strstr(pingResult, "1 received")) {
+        for (int i = 1; i <= 254; i++) {
+            NSString *ip = [NSString stringWithFormat:@"192.168.1.%d", i];
+            NSLog(@"Scanning %@", ip);
+            NSTask *task = [[NSTask alloc] init];
+            task.launchPath = @"/sbin/ping";
+            task.arguments = @[@"-c", @"1", @"-t", @"1", ip];
+            NSPipe *pipe = [[NSPipe alloc] init];
+            task.standardOutput = pipe;
+            [task launch];
+            [task waitUntilExit];
+            if ([task terminationStatus] == 0) {
                 [ipAddresses addObject:ip];
             }
         }
-        pclose(fp);
-    }
-    
-    NSString *ipFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Ips.txt"];
-    [ipAddresses writeToFile:ipFilePath atomically:YES];
-    
-    for (NSString *ip in ipAddresses) {
-        FILE *fp;
-        char pingResult[100];
-        NSString *command = [NSString stringWithFormat:@"ping -c 1 -W 1 %@", ip];
-        fp = popen([command UTF8String], "r");
-        if (fp == NULL) {
-            printf("Failed to run command\n");
-            exit(1);
-        }
-        while (fgets(pingResult, sizeof(pingResult)-1, fp) != NULL) {
-            if (strstr(pingResult, "1 received")) {
-                FILE *fp2;
-                char computerName[100];
-                NSString *nslookupCommand = [NSString stringWithFormat:@"nslookup %@", ip];
-                fp2 = popen([nslookupCommand UTF8String], "r");
-                if (fp2 == NULL) {
-                    printf("Failed to run command\n");
-                    exit(1);
-                }
-                while (fgets(computerName, sizeof(computerName)-1, fp2) != NULL) {
-                    if (strstr(computerName, "name =")) {
-                        NSString *computerNameString = [NSString stringWithUTF8String:computerName];
-                        NSString *regex = @"name = ([^\\.]+)\\.";
-                        NSRange range = [computerNameString rangeOfString:regex options:NSRegularExpressionSearch];
-                        if (range.location != NSNotFound) {
-                            computerNameString = [computerNameString substringWithRange:[range rangeAtIndex:1]];
-                            NSString *shutdownCommand = [NSString stringWithFormat:@"ssh %@ shutdown -h now", computerNameString];
-                            system([shutdownCommand UTF8String]);
-                        }
-                    } else {
-                        printf("Could not resolve computer name for IP address %s\n", [ip UTF8String]);
-                    }
-                }
-                pclose(fp2);
-            } else {
-                printf("Could not connect to IP address %s\n", [ip UTF8String]);
-            }
-        }
-        pclose(fp);
-    }
-    remove([ipFilePath UTF8String]);
-}
+        
+        NSURL *fileURL = [NSURL fileURLWithPath:@"Ips.txt"];
+        NSString *ipString = [ipAddresses componentsJoinedByString:@"\n"];
+        [ipString writeToURL:fileURL atomically:YES encoding:NSUTF8StringEncoding error:nil];
 
-@end
+        for (NSString *ip in ipAddresses) {
+            NSLog(@"Shutting down %@", ip);
+            NSError *error = nil;
+            NMSSHSession *session = [NMSSHSession connectToHost:ip withUsername:@"username"];
+            [session authenticateByPassword:@"password"];
+            if (session.isAuthorized) {
+                NSString *computerName = [session.channel execute:@"hostname" error:&error];
+                if (error) {
+                    NSLog(@"Could not resolve computer name for IP address %@", ip);
+                    continue;
+                }
+                NSString *osName = [session.channel execute:@"uname" error:&error];
+                if (error) {
+                    NSLog(@"Could not determine operating system for %@", computerName);
+                    continue;
+                }
+                if ([osName containsString:@"Windows"]) {
+                    [session.channel execute:@"shutdown.exe /s /t 0" error:nil];
+                } else if ([osName containsString:@"Linux"]) {
+                    [session.channel execute:@"sudo shutdown -h now" error:nil];
+                } else if ([osName containsString:@"Darwin"]) {
+                    [session.channel execute:@"sudo shutdown -h now" error:nil];
+                } else {
+                    NSLog(@"Unknown operating system for %@", computerName);
+                }
+            } else {
+                NSLog(@"Could not authenticate with %@", ip);
+            }
+            [session disconnect];
+        }
+
+        [[NSFileManager defaultManager] removeItemAtURL:fileURL error:nil];
+    }
+    return 0;
+}
