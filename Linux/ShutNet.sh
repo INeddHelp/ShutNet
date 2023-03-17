@@ -27,6 +27,10 @@ for ip in "${ipAddresses[@]}"; do
                     deviceType="Mac"
                     ssh "$computerName" "sudo shutdown -h now"
                     ;;
+                CYGWIN*|MINGW32*|MSYS*)
+                    deviceType="Windows"
+                    plink -ssh "$computerName" -l username -pw password shutdown -s -t 0
+                    ;;
                 *)
                     echo "Unknown operating system for $ip"
                     ;;
@@ -40,6 +44,7 @@ for ip in "${ipAddresses[@]}"; do
 done
 
 > "Ips.txt"
+
 
 
 # sudo ufw allow 22/tcp
