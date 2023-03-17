@@ -40,5 +40,4 @@ for ip in ipAddresses {
     }
 }
 
-// Clear the IP addresses file
 try? FileManager.default.removeItem(at: fileURL)
