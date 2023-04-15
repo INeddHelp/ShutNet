@@ -8,3 +8,15 @@ name = "python"
 
 [[analyzers]]
 name = "shell"
+
+[[transformers]]
+name = "black"
+
+[[transformers]]
+name = "isort"
+
+[[transformers]]
+name = "yapf"
+
+[[transformers]]
+name = "autopep8"
